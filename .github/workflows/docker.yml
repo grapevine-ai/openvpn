@@ -1,0 +1,21 @@
+name: OpenVPN
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Docker images
+        uses: docker/build-push-action@v1.1.0
+        with:
+          username: grapevinedev
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          repository: grapevineai/openvpn
+          tags: latest,0.1.2
