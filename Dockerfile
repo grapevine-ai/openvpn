@@ -38,7 +38,7 @@ RUN apk add --virtual .build-deps build-base automake autoconf libtool git linux
     mkdir -p /usr/src && \
     cd /usr/src && \
     ( git clone https://github.com/duosecurity/duo_unix.git && \
-      cd duo_unix-* && \
+      cd duo_unix && \
       ./bootstrap && \
       ./configure --with-pam --prefix=/usr && \
       make && \
