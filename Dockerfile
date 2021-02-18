@@ -73,4 +73,3 @@ RUN set -ex \
       && chmod +x openvpn-api \
       && mv openvpn-api /bin/ \
       && apk del .build-deps
-
